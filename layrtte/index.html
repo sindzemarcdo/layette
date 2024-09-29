@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiawe Flore Layette</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        header {
+            background-color: orange;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        header img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        header img:hover {
+            transform: scale(1.1);
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .advertisement {
+            position: relative;
+            overflow: inherit;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .ad-images {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+
+        .ad-images img {
+            min-width: 10%;
+            height: min-content;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .product {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 20px;
+            flex: 1 1 calc(25% - 40px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery {
+            position: relative;
+            max-width: 100%;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+
+        .gallery-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .gallery-images img {
+            width: 50%;
+            height: auto;
+            min-width: 80%;
+        }
+
+        .gallery-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .gallery-button {
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .testimonials {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+
+        .testimonial {
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            background-color: orange;
+            color: white;
+        }
+
+        .contact-form {
+            margin-top: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: orange;
+        }
+
+        @media (max-width: 768px) {
+            .product {
+                flex: 1 1 calc(50% - 40px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Bienvenue à la Boutique de Tiawe Flore Layette</h1>
+        <img src="bebe-se-lave.jpg" alt="logo" class="image">
+    </header>
+
+    <nav>
+        <a href="#products">Produits</a>
+        <a href="#testimonials">Témoignages</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="advertisement">
+            <div class="ad-images">
+                <img src="bur.png" alt="Publicité 1">
+                <img src="co.jpg" alt="Publicité 2">
+                <img src="voi.jpg" alt="Publicité 3">
+                <img src="fra.jpg" alt="Publicité 3">
+                <img src="li.jpg" alt="Publicité 3">
+            </div>
+        </div>
+
+        <h2 id="products">Nos Produits</h2>
+        <div class="products">
+            <div class="product">
+                <h3>Vêtement Bébé 1</h3>
+                <div class="gallery">
+                    <div class="gallery-images">
+                        <img src=".jpg" alt="Produit 1 - Image 1">
+                        <img src="1.jpg" alt="Produit 1 - Image 2">
+                        <img src="2.jpg" alt="Produit 1 - Image 3">
+                        <img src="3.jpg" alt="Produit 1 - Image 3">
+                    </div>
+                    <div class="gallery-controls">
+                        <button class="gallery-button" onclick="changeGallery(-1, 0)">&#10094;</button>
+                        <button class="gallery-button" onclick="changeGallery(1, 0)">&#10095;</button>
+                    </div>
+                </div>
+                <p>Prix: 25€</p>
+            </div>
+            <div class="product">
+                <h3>Vêtement Bébé 2</h3>
+                <div class="gallery">
+                    <div class="gallery-images">
+                        <img src="e.jpg" alt="Produit 2 - Image 1">
+                        <img src="a.jpg" alt="Produit 2 - Image 2">
+                        <img src="b.jpg" alt="Produit 2 - Image 3">
+                        <img src="d.jpg" alt="Produit 1 - Image 3">
+                        <img src="c.jpg" alt="Produit 1 - Image 3">
+                    </div>
+                    <div class="gallery-controls">
+                        <button class="gallery-button" onclick="changeGallery(-1, 1)">&#10094;</button>
+                        <button class="gallery-button" onclick="changeGallery(1, 1)">&#10095;</button>
+                    </div>
+                </div>
+                <p>Prix: 30€</p>
+            </div>
+            <div class="product">
+                <h3>Vêtement Bébé 3</h3>
+                <div class="gallery">
+                    <div class="gallery-images">
+                        <img src="@.jpg" alt="Produit 3 - Image 1">
+                        <img src="-.jpg" alt="Produit 3 - Image 2">
+                        <img src="+.jpg" alt="Produit 3 - Image 3">
+                        <img src="+-.jpg" alt="Produit 1 - Image 3">
+                    </div>
+                    <div class="gallery-controls">
+                        <button class="gallery-button" onclick="changeGallery(-1, 2)">&#10094;</button>
+                        <button class="gallery-button" onclick="changeGallery(1, 2)">&#10095;</button>
+                    </div>
+                </div>
+                <p>Prix: 20€</p>
+            </div>
+            <div class="product">
+                <h3>Vêtement Bébé 4</h3>
+                <div class="gallery">
+                    <div class="gallery-images">
+                        <img src="m.jpg" alt="Produit 4 - Image 1">
+                        <img src="l.jpg" alt="Produit 4 - Image 2">
+                        <img src="n.jpg" alt="Produit 4 - Image 3">
+                        <img src="o.jpg" alt="Produit 1 - Image 3">
+                        <img src="mig.jpg" alt="Produit 1 - Image 3">
+                    </div>
+                    <div class="gallery-controls">
+                        <button class="gallery-button" onclick="changeGallery(-1, 3)">&#10094;</button>
+                        <button class="gallery-button" onclick="changeGallery(1, 3)">&#10095;</button>
+                    </div>
+                </div>
+                <p>Prix: 15€</p>
+            </div>
+        </div>
+
+        <div class="testimonials" id="testimonials">
+            <h2>Témoignages</h2>
+            <div class="testimonial">"Excellents produits, je recommande!" - Marie</div>
+            <div class="testimonial">"Mes enfants adorent leurs vêtements!" - Paul</div>
+            <div class="testimonial">"Service client très réactif!" - Sophie</div>
+        </div>
+
+        <div class="contact-form" id="contact">
+            <h2>Contactez-nous</h2>
+            <form>
+                <input type="text" placeholder="Votre nom" required>
+                <input type="email" placeholder="Votre email" required>
+                <textarea rows="4" placeholder="Votre message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Boutique de Tiawe Flore Layette. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        const adImages = document.querySelector('.ad-images');
+        const images = document.querySelectorAll('.ad-images img');
+        let currentIndex = 0;
+
+        function changeImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            adImages.style.transform = 'translateX(' + (-currentIndex * 50) + '%)';
+        }
+
+        setInterval(changeImage, 5000);
+
+        const galleryImages = document.querySelectorAll('.gallery-images');
+        const galleryCurrentIndex = [0, 0, 0, 0]; // Pour chaque produit
+
+        function changeGallery(direction, productIndex) {
+            const totalImages = galleryImages[productIndex].children.length;
+            galleryCurrentIndex[productIndex] = (galleryCurrentIndex[productIndex] + direction + totalImages) % totalImages;
+            const offset = -galleryCurrentIndex[productIndex] * 100;
+            galleryImages[productIndex].style.transform = 'translateX(' + offset + '%)';
+        }
+    </script>
+
+</body>
+
+</html>
